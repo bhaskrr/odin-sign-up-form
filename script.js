@@ -2,8 +2,6 @@
 const submitBtn = document.querySelector('.sub-btn');
 
 const checkPasswordEquality = (e) =>{
-    e.preventDefault();
-
     //getting values from DOM elements
     const password = document.querySelector('#password');
     const confirmedPassword = document.querySelector('#confirm-password');
@@ -16,6 +14,8 @@ const checkPasswordEquality = (e) =>{
         pwNotMatchText.style.display = 'none';
     }
     else{
+        //preventing page refresh
+        e.preventDefault();
         password.classList.add('red-border');
         confirmedPassword.classList.add('red-border');
         pwNotMatchText.style.display = 'block';
